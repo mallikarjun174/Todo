@@ -1,0 +1,83 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+
+<head>
+
+<title>Demo of Strikethrough JavaScript string object</title>
+
+<script type="text/javascript">
+
+function my_fun(j){
+
+        var chkbox ="ckb" + j;
+
+        var my_span ="txt" + j;
+
+        var msg = chkbox + "  " + my_span;
+
+         if(document.getElementById(chkbox).checked){ 
+
+            document.getElementById(my_span).style.textDecoration='line-through';
+
+        }else{
+
+            document.getElementById(my_span).style.textDecoration='none';
+
+            }
+
+         }
+
+
+function displayOut(){
+  var input=document.getElementById("txt").value;
+  if(input.length===0)
+  {
+      alert("Please enter a valid input");
+      return;
+  }
+
+  var text2=document.getElementById("txt1");
+  text2.value += input+"\n";
+  eraseText();
+  
+}
+  function eraseText() {
+      document.getElementById("txt").value = "";
+  }
+
+
+  function yourFunction(){
+     document.getElementById("txt1").value = "";
+        };
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+
+
+<h1 id="result">To - Do</h1>
+<textarea id="txt1" rows="10" cols="20" readonly="readonly" ></textarea>
+
+
+<textarea id="txt" rows="4" cols="20"  onclick="eraseText()"></textarea><input type="button" onclick="displayOut()" value="click">
+
+
+<button onClick="yourFunction();">X</button>
+
+
+<input type=checkbox  id=ckb1 value=1 onclick=my_fun(1);> 
+
+
+
+
+</body>
+
+</html>
